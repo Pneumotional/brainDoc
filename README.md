@@ -60,7 +60,70 @@ This project is a web-based application built with **Django**, **HTML**, **CSS**
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
-## How to Run
-Will be uploaded soon
+Here’s the "Installation and Setup" section for your README:
 
+---
+
+## Installation and Setup
+
+### Prerequisites
+
+- Python 3.7+
+- Django 4.0+
+- Phidata (for framework setup)
+- A Google OAuth 2.0 client setup (for Google login functionality)
+
+### Instructions
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/Pneumotional/brainDoc.git
+   cd brainDoc
+   ```
+
+2. **Create a virtual environment**:
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. **Install dependencies**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure Google OAuth**:
+
+   - Set up your Google OAuth credentials on the [Google Developer Console](https://console.cloud.google.com/).
+   - Download the OAuth client credentials file and add it to your project.
+   - Update the `settings.py` file with your OAuth credentials.
+
+5. **Run Migrations**:
+
+   ```bash
+   python manage.py migrate
+   ```
+
+6. **Start the development server**:
+
+   ```bash
+   python manage.py runserver
+   ```
+
+7. **Access the application**:
+
+   Open your browser and go to:
+
+   ```
+   http://127.0.0.1:8000
+   ```
+
+---
+
+## Credentials
+username: admin
+pass: admin
 
