@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="wrapper">
+    <form action="{% url 'register' %}" method="post">
+      {% csrf_token %}
+      <h1>Register</h1>
+      
+      {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+            <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      <div class="input-box">
+        <input type="text" name="username" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" placeholder="Email" required>
+        <i class='bx bxs-envelope'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password1" placeholder="Password" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password2" placeholder="Confirm Password" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      
+      {% if form.errors %}
+        <div class="error-messages">
+          {% for field in form %}
+            {% for error in field.errors %}
+              <div class="error">{{ error }}</div>
+            {% endfor %}
+          {% endfor %}
+          {% for error in form.non_field_errors %}
+            <div class="error">{{ error }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      <button type="submit" class="btn">Register</button>
+      <div class="social-login">
+        <p class="or-text">Or continue with</p>
+        <a href="{% url 'social:begin' 'google-oauth2' %}" class="google-btn">
+            <i class='bx bxl-google'></i>
+            Sign Up with Google
+        </a>
+    </div>
+      <div class="register-link">
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+      </div>
+
+    </form>
+  </div>
+</body>
+</html>

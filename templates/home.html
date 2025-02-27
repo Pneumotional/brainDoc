@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hover-min.css' %}">
+</head>
+<body>
+        <!-- header -->
+    <header>
+        <div class="logo">brainDoc</div>
+        <ul class="menu">
+            <a href="{% url 'home' %}" style="text-decoration: none; color:white;" class="hvr-underline-from-center"><li>Home</li></a>
+            <a href="{% url 'login' %}" style="text-decoration: none; color:white;" class="hvr-underline-from-center"><li>Login</li></a>
+            <a href="{% url 'register' %}" style="text-decoration: none; color:white;" class="hvr-underline-from-center"><li>Register</li></a>
+        </ul>
+    </header>
+
+    <!-- slider -->
+
+    <div class="slider">
+        <!-- list Items -->
+        <div class="list">
+            <div class="item active">
+                <img src="{% static 'image/img1.png' %}">
+                <div class="content">
+                    <p>design</p>
+                    <h2>Turn Your PDFs into Conversations</h2>
+                    <p>
+                        Upload, search, and interact with your documents like never before.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'image/img2.png' %}">
+                <div class="content">
+                    <p>Upload with Ease</p>
+                    <h2>Drag, Drop, and Done!</h2>
+                    <p>
+                        Securely upload PDFs in seconds and get instant access to AI-powered insights.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'image/img3.png' %}">
+                <div class="content">
+                    <p>Smart Search & Query</p>
+                    <h2>Find Answers Fast</h2>
+                    <p>
+                        No more scrolling—ask questions and get direct answers from your documents.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'image/img4.jpg' %}">
+                <div class="content">
+                    <p>AI-Powered Insights</p>
+                    <h2> Smarter Interactions, Better Results</h2>
+                    <p>
+                        Extract key points, summarize content, and get AI-driven recommendations.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'image/img5.jpg' %}">
+                <div class="content">
+                    <p>Get Started Today</p>
+                    <h2>Try It for Free!</h2>
+                    <p>
+                        Upload your first document now and experience the future of document interaction.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- button arrows -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <div class="item active">
+                <img src="static/image/img1.png">
+                <div class="content">
+                    Design
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'image/img2.png' %}">
+                <div class="content">
+                    Upload Ease
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'image/img3.png' %}">
+                <div class="content">
+                    Smart Search
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'image/img4.jpg' %}">
+                <div class="content">
+                    AI Powered
+                </div>
+            </div>
+            <div class="item">
+                <img src="{% static 'image/img5.jpg' %}">
+                <div class="content">
+                    Get Started
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
