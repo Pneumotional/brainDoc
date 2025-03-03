@@ -29,6 +29,7 @@ This project is a web-based application built with **Django**, **HTML**, **CSS**
 - Django 4.0+
 - Phidata (for framework setup)
 - A Google OAuth 2.0 client setup (for Google login functionality)
+- Docker
 
 
 
@@ -72,6 +73,7 @@ Here’s the "Installation and Setup" section for your README:
 - Django 4.0+
 - Phidata (for framework setup)
 - A Google OAuth 2.0 client setup (for Google login functionality)
+- Docker
 
 ### Instructions
 
@@ -94,6 +96,13 @@ Here’s the "Installation and Setup" section for your README:
    ```bash
    pip install -r requirements.txt
    ```
+   
+4. Install Docker and Docker composer and run this on the terminal
+   
+   ```bash
+   docker run -d -e POSTGRES_DB=ai -e POSTGRES_USER=ai -e POSTGRES_PASSWORD=ai -e PGDATA=/var/lib/postgresql/data/pgdata -v pgvolume:/var/lib/postgresql/data -p 5532:5432 --name pgvector phidata/pgvector:16
+
+   ```
 
 4. **Configure Google OAuth**:
 
@@ -113,6 +122,9 @@ Here’s the "Installation and Setup" section for your README:
    python manage.py runserver
    ```
 
+7. **Running the Vectordatabase
+   Open Docker and CLick on Run
+   
 7. **Access the application**:
 
    Open your browser and go to:
